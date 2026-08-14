@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roomly — Hotel Room Booking &amp; Management</title>
+<meta name="description" content="Roomly is a hotel room booking and management system — real-time availability, instant bookings, and a live occupancy dashboard. Try the live demo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<svg style="display:none">
+  <symbol id="icon-bed" viewBox="0 0 24 24"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6"/><path d="M3 18v2M21 18v2M3 12V7a1 1 0 0 1 1-1h6v6"/><circle cx="7" cy="9" r="1.2"/></symbol>
+  <symbol id="icon-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></symbol>
+  <symbol id="icon-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20c0-3.6 3-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17.5" cy="9" r="2.4"/><path d="M15.5 14.3c2.7.3 5 2.4 5 5.7"/></symbol>
+  <symbol id="icon-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8 20 3M16.5 7.5l3 3M13.5 10.5l2.4 2.4"/></symbol>
+  <symbol id="icon-star" viewBox="0 0 24 24"><path d="M12 2.5l3 6.4 6.8.9-5 4.9 1.2 6.8L12 18l-6 3.5L7.2 14.7 2.2 9.8l6.8-.9z"/></symbol>
+  <symbol id="icon-check" viewBox="0 0 24 24"><path d="M4 12.5l5.5 5.5L20 6"/></symbol>
+  <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.7 7-12a7 7 0 1 0-14 0c0 5.3 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+  <symbol id="icon-chart" viewBox="0 0 24 24"><path d="M4 20V10M12 20V4M20 20v-7"/></symbol>
+  <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 2.5l8 3v6c0 5.2-3.4 8.7-8 10-4.6-1.3-8-4.8-8-10v-6z"/><path d="M8.5 12l2.5 2.5L15.5 9"/></symbol>
+  <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+</svg>
+
+<div id="toast"></div>
+
+<header class="navbar" id="navbar">
+  <div class="wrap">
+    <a href="#top" class="brand"><span class="brand-mark">R</span> Roomly</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#features">Features</a>
+      <a href="#preview">Preview</a>
+      <a href="#pricing">Pricing</a>
+      <a href="app.html" class="btn btn-primary btn-sm">Try Live Demo</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><svg class="icon"><use href="#icon-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow"><svg class="icon"><use href="#icon-bed"/></svg> Hotel &amp; Stay Management, Simplified</span>
+      <h1>Every room, every booking, <em>always in sync.</em></h1>
+      <p class="hero-sub">Roomly gives small hotels and guesthouses real-time availability, an instant booking flow, and a dashboard that actually tells you what's happening today — no spreadsheets, no double-bookings.</p>
+      <div class="hero-ctas">
+        <a href="app.html" class="btn btn-primary">Try Live Demo <svg class="icon"><use href="#icon-key"/></svg></a>
+        <a href="#features" class="btn btn-outline">See Features</a>
+      </div>
+      <div class="hero-stats">
+        <span class="stat"><svg class="icon"><use href="#icon-bed"/></svg> 6 room types</span>
+        <span class="stat"><svg class="icon"><use href="#icon-calendar"/></svg> Real-time availability</span>
+        <span class="stat"><svg class="icon"><use href="#icon-key"/></svg> Zero setup</span>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="ticket">
+        <div class="ticket-head">
+          <div>
+            <h4>Deluxe Garden Room</h4>
+            <div style="color:var(--ink-soft); font-size:.85rem; margin-top:4px">Booking #RM-2481</div>
+          </div>
+          <span class="badge">Confirmed</span>
+        </div>
+        <div class="ticket-row"><span>Guest</span><span>Priya Nair</span></div>
+        <div class="ticket-row"><span>Check-in</span><span>Fri, 21 Aug</span></div>
+        <div class="ticket-row"><span>Check-out</span><span>Sun, 23 Aug</span></div>
+        <div class="ticket-row"><span>Guests</span><span>2 adults</span></div>
+        <div class="ticket-total"><span>Total</span><span>₹8,400</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="features">
+  <div class="wrap">
+    <div class="section-heading reveal">
+      <span class="eyebrow">Features</span>
+      <h2>Everything the front desk needs, nothing it doesn't.</h2>
+      <p>Built around the daily rhythm of a small property — search, book, and check the numbers, all in one place.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon"><svg class="icon"><use href="#icon-calendar"/></svg></div>
+        <h3>Real-time availability</h3>
+        <p>Search any date range and instantly see which rooms are free — no manual cross-checking.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><svg class="icon"><use href="#icon-key"/></svg></div>
+        <h3>Instant booking flow</h3>
+        <p>From room selection to confirmation in under a minute, with a clean guest-facing form.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><svg class="icon"><use href="#icon-users"/></svg></div>
+        <h3>Guest &amp; reservation management</h3>
+        <p>Every booking in one table — search, review, and cancel without digging through email threads.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><svg class="icon"><use href="#icon-chart"/></svg></div>
+        <h3>Occupancy dashboard</h3>
+        <p>Occupancy rate, bookings this week, and revenue at a glance — updated the moment a booking lands.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><svg class="icon"><use href="#icon-bed"/></svg></div>
+        <h3>Room inventory at a glance</h3>
+        <p>Every room type, rate, and capacity laid out clearly for staff and guests alike.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><svg class="icon"><use href="#icon-shield"/></svg></div>
+        <h3>Flexible cancellation</h3>
+        <p>Cancel or amend a booking in a click — availability updates immediately, everywhere.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="preview">
+  <div class="wrap">
+    <div class="section-heading reveal">
+      <span class="eyebrow">Live Preview</span>
+      <h2>This isn't a mockup. It's the actual app.</h2>
+      <p>What you see below is Roomly running live — try the full thing yourself.</p>
+    </div>
+    <div class="reveal">
+      <div class="browser-frame">
+        <div class="browser-bar">
+          <div class="browser-dots"><span></span><span></span><span></span></div>
+          <div class="browser-url">roomly.app/dashboard</div>
+        </div>
+        <div class="browser-viewport">
+          <iframe src="app.html" title="Roomly live preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+        </div>
+      </div>
+      <div class="preview-cta">
+        <a href="app.html" class="btn btn-primary">Open Full Demo <svg class="icon"><use href="#icon-key"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pricing">
+  <div class="wrap">
+    <div class="section-heading reveal">
+      <span class="eyebrow">Pricing</span>
+      <h2>Simple pricing, built for small properties.</h2>
+      <p>Every plan includes the full booking engine and dashboard. Pick the one that matches your room count.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card reveal">
+        <h3>Solo Host</h3>
+        <div class="price">₹1,499<small> /mo</small></div>
+        <p class="price-desc">For a single property up to 6 rooms.</p>
+        <ul class="price-list">
+          <li>Up to 6 rooms</li>
+          <li>Real-time availability search</li>
+          <li>Booking &amp; cancellation management</li>
+          <li>Email support</li>
+        </ul>
+        <a href="app.html" class="btn btn-outline btn-block">Try Live Demo</a>
+      </div>
+      <div class="price-card featured reveal">
+        <span class="price-badge">Most Popular</span>
+        <h3>Boutique</h3>
+        <div class="price">₹3,499<small> /mo</small></div>
+        <p class="price-desc">For growing properties up to 25 rooms.</p>
+        <ul class="price-list">
+          <li>Up to 25 rooms</li>
+          <li>Everything in Solo Host</li>
+          <li>Occupancy &amp; revenue dashboard</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="app.html" class="btn btn-primary btn-block">Try Live Demo</a>
+      </div>
+      <div class="price-card reveal">
+        <h3>Portfolio</h3>
+        <div class="price">Custom</div>
+        <p class="price-desc">For multi-property groups and chains.</p>
+        <ul class="price-list">
+          <li>Unlimited rooms &amp; properties</li>
+          <li>Everything in Boutique</li>
+          <li>Multi-property reporting</li>
+          <li>Dedicated onboarding</li>
+        </ul>
+        <a href="app.html" class="btn btn-outline btn-block">Talk to Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="cta-banner reveal">
+    <h2>Ready to see Roomly in action?</h2>
+    <p>No sign-up, no setup — jump straight into a fully working demo.</p>
+    <a href="app.html" class="btn btn-primary">Try Live Demo <svg class="icon"><use href="#icon-key"/></svg></a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#top" class="brand"><span class="brand-mark">R</span> Roomly</a>
+        <p>Hotel room booking and management, built for small and independent properties.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="#features">Features</a>
+        <a href="#preview">Live Preview</a>
+        <a href="#pricing">Pricing</a>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="app.html">Try the Demo</a>
+        <a href="app.html#view-bookings">Bookings</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="#">hello@roomly.app</a>
+        <a href="#">Request a Callback</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Roomly.</span>
+      <span>Demo product — no real bookings are processed, all data lives in your browser.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
